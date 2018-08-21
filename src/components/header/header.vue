@@ -16,7 +16,13 @@
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    data() {
+      return {
+        city: []
+      }
+    }
+  }
 </script>
 <style lang="stylus" scoped>
   @import '../../assets/styles/varibles.styl'
