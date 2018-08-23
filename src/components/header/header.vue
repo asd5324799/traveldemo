@@ -25,7 +25,7 @@
   }
 </script>
 <style lang="stylus" scoped>
-  @import '../../assets/styles/varibles.styl'
+  @import '~styles/varibles.styl'
   .header
     display: flex
     line-height: $headerHeight
