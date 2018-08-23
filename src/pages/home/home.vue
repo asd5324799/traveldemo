@@ -4,6 +4,7 @@
     <home-swiper :list="list"></home-swiper>
     <home-icons :list="list"></home-icons>
     <home-recommend :list="list"></home-recommend>
+    <home-weekend :list="list"></home-weekend>
   </div>
 </template>
 <script>
@@ -11,6 +12,7 @@
   import HomeSwiper from 'components/swiper/swiper.vue'
   import HomeIcons from 'components/icons/icons.vue'
   import HomeRecommend from 'components/recommend/recommend.vue'
+  import HomeWeekend from 'components/weekend/weekend.vue'
 
   export default {
     data() {
@@ -22,7 +24,8 @@
       HomeHeader,
       HomeSwiper,
       HomeIcons,
-      HomeRecommend
+      HomeRecommend,
+      HomeWeekend
     }
   }
 </script>
