@@ -10,6 +10,7 @@
 </template>
 <script>
   export default {
+    name: 'HomeSwiper',
     props: {
       list: Array
     },
@@ -25,8 +26,7 @@
       showSwiper() {
         return this.list.length
       }
-    },
-    name: 'HomeSwiper'
+    }
   }  
 </script>
 <style lang="stylus" scoped>

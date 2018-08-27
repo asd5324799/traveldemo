@@ -1,4 +1,5 @@
-{
+const Mock = require('mockjs');
+const arr = {
 	"ret": true,
 	"data":{
 		"hotCities": [{
@@ -3863,4 +3864,6 @@
 			}]
 		}
 	}
-}
+};
+
+Mock.mock('/api/city', 'get', arr);

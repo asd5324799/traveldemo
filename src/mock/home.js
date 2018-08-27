@@ -1,4 +1,5 @@
-{
+const Mock = require('mockjs');
+const arr = {
   "ret": true,
   "data": {
     "swiperList": [{
@@ -104,4 +105,5 @@
         "desc": "带宝贝观看演出，近距离体验艺术的无穷魅力"
       }]
   }
-}
+};
+Mock.mock('/api/index', 'get', arr);

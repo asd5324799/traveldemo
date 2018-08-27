@@ -8,6 +8,11 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 
+// import './mock/mock'
+if(process.env.NODE_ENV === 'development') {
+  require('./mock/mock.js');
+}
+
 Vue.config.productionTip = false
 // 移动端300ms延迟解决方案
 fastClick.attach(document.body)

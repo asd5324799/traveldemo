@@ -1,10 +1,10 @@
 <template>
   <div>
     <home-header></home-header>
-    <home-swiper :list="list"></home-swiper>
-    <home-icons :list="list"></home-icons>
-    <home-recommend :list="list"></home-recommend>
-    <home-weekend :list="list"></home-weekend>
+    <home-swiper :list="swiperList"></home-swiper>
+    <home-icons :list="iconList"></home-icons>
+    <home-recommend :list="recommendList"></home-recommend>
+    <home-weekend :list="weekendList"></home-weekend>
   </div>
 </template>
 <script>
@@ -13,11 +13,17 @@
   import HomeIcons from 'components/icons/icons.vue'
   import HomeRecommend from 'components/recommend/recommend.vue'
   import HomeWeekend from 'components/weekend/weekend.vue'
+  import '../../axios'
 
   export default {
+    name: 'Home',
     data() {
       return {
-        list: []
+        lastCity: '',
+        swiperList: [],
+        iconList: [],
+        recommendList: [],
+        weekendList: []
       }
     },
     components: {
@@ -26,7 +32,22 @@
       HomeIcons,
       HomeRecommend,
       HomeWeekend
-    }
+    },
+    methods: {
+      getHomeInfo() {
+        this.$axios.get('/api/index')
+          .then(this.getInfoSucc);
+      },
+      getInfoSucc(data) {
+        this.swiperList = data.swiperList;
+        this.iconList = data.iconList;
+        this.recommendList = data.recommendList;
+        this.weekendList = data.weekendList;
+      }
+    },
+    mounted() {
+      this.getHomeInfo();
+    },
   }
 </script>
 <style lang="stylus">
