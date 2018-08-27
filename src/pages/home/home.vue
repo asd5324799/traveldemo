@@ -8,11 +8,11 @@
   </div>
 </template>
 <script>
-  import HomeHeader from 'components/header/header.vue'
-  import HomeSwiper from 'components/swiper/swiper.vue'
-  import HomeIcons from 'components/icons/icons.vue'
-  import HomeRecommend from 'components/recommend/recommend.vue'
-  import HomeWeekend from 'components/weekend/weekend.vue'
+  import HomeHeader from './components/header.vue'
+  import HomeSwiper from './components/swiper.vue'
+  import HomeIcons from './components/icons.vue'
+  import HomeRecommend from './components/recommend.vue'
+  import HomeWeekend from './components/weekend.vue'
   import '../../axios'
 
   export default {
