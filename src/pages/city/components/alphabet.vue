@@ -29,10 +29,10 @@
     },
     methods: {
       handleLetterClick (e) {
-        this.$emit('change', e.target.innerText)
+        this.$emit('change', e.target.innerText);
       },
       handleTouchStart () {
-        this.touchStatus = true
+        this.touchStatus = true;
       },
       handleTouchMove (e) {
         if (this.touchStatus) {
@@ -49,7 +49,7 @@
         }
       },
       handleTouchEnd () {
-        this.touchStatus = false
+        this.touchStatus = false;
       }
     },
     computed: {
