@@ -2,11 +2,22 @@
   <div class="city">
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
+    <city-list
+      :cities="cities"
+      :hot="hotCities"
+      :letter="letter"
+    ></city-list>
+    <city-alphabet
+      :cities="cities"
+      @change="handleLetterChange"
+    ></city-alphabet>
   </div>
 </template>
 <script>
   import CityHeader from './components/header.vue'
   import CitySearch from './components/search.vue'
+  import CityList from './components/list.vue'
+  import CityAlphabet from './components/alphabet'
   import '../../axios'
 
   export default {
@@ -26,14 +37,19 @@
       handleGetCityInfoSucc(res) {
         this.cities = res.cities;
         this.hotCities = res.hotCities;
-      }  
+      },
+      handleLetterChange(letter) {
+        this.letter = letter
+      }
     },
     mounted() {
       this.getCityInfo();
     },
     components: {
       CityHeader,
-      CitySearch
+      CitySearch,
+      CityList,
+      CityAlphabet
     }
   }
 </script>
