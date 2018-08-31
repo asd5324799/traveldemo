@@ -39,7 +39,7 @@
         this.hotCities = res.hotCities;
       },
       handleLetterChange(letter) {
-        this.letter = letter
+        this.letter = letter;
       }
     },
     mounted() {

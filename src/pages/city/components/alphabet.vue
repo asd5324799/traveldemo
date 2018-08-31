@@ -62,7 +62,7 @@
       }
     },
     updated () {
-      this.startY = this.$refs['A'][0].offsetTop
+      this.startY = this.$refs['A'][0].offsetTop;
     }
   }
 </script>
@@ -81,5 +81,5 @@
       line-height: .4rem
       text-align: center
       color: $bgColor
-</style>
+</style> 
 
