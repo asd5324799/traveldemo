@@ -9,20 +9,21 @@
     </div>
     <router-link to='/city'>
       <div class="header-right">
-        {{this.city}}
+        {{this.doubleCity}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
   </div>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        city: []
-      }
-    }
+import { mapState, mapGetters } from 'vuex'
+export default {
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
   }
+}
 </script>
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
