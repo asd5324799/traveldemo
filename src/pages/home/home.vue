@@ -14,6 +14,7 @@
   import HomeRecommend from './components/recommend.vue'
   import HomeWeekend from './components/weekend.vue'
   import '../../axios'
+  import { mapState } from 'vuex'
 
   export default {
     name: 'Home',
@@ -31,11 +32,11 @@
       HomeSwiper,
       HomeIcons,
       HomeRecommend,
-      HomeWeekend
+      HomeWeekend 
     },
     methods: {
       getHomeInfo() {
-        this.$axios.get('/api/index')
+        this.$axios.get('/api/index?city=' + this.city)
           .then(this.getInfoSucc);
       },
       getInfoSucc(data) {
@@ -46,7 +47,17 @@
       }
     },
     mounted() {
+      this.lastCity = this.city;
       this.getHomeInfo();
+    },
+    computed: {
+      ...mapState(['city'])
+    },
+    activated() {
+      if(this.lastCity !== this.city) {
+        this.lastCity = this.city;
+        this.getHomeInfo();
+      }
     },
   }
 </script>

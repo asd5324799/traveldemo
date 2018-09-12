@@ -106,4 +106,5 @@ const arr = {
       }]
   }
 };
-Mock.mock('/api/index', 'get', arr);
+const url = /^\/api\/index\?city\=[\u4e00-\u9fa5]*$/;
+Mock.mock(url, 'get', arr);
