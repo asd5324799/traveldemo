@@ -106,5 +106,6 @@ const arr = {
       }]
   }
 };
-const url = /^\/api\/index\?city\=[\u4e00-\u9fa5]*$/;
+// eslint-disable-next-line
+const url = /^\/api\/index\?city=[A-Za-z0-9\%]*$/;
 Mock.mock(url, 'get', arr);

@@ -36,7 +36,11 @@
     },
     methods: {
       getHomeInfo() {
-        this.$axios.get('/api/index?city=' + this.city)
+        this.$axios.get('/api/index', {
+          params: {
+            city: this.city
+          }
+        })
           .then(this.getInfoSucc);
       },
       getInfoSucc(data) {

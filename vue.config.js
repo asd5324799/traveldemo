@@ -9,5 +9,6 @@ module.exports = {
     config.resolve.alias
       .set('styles', resolve('src/assets/styles'))
       .set('components', resolve('src/components'))
+      .set('common', resolve('src/common'))
   }
 }
